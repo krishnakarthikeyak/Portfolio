@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Contact</title>
+
+    <script>
+        document.documentElement.classList.remove('no-js');
+        document.documentElement.classList.add('js');
+    </script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/vendor.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+
+    <!-- favicons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ url_for('static', filename='apple-touch-icon.png') }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ url_for('static', filename='favicon-32x32.png') }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ url_for('static', filename='favicon-16x16.png') }}">
+    <link rel="manifest" href="{{ url_for('static', filename='site.webmanifest') }}">
+
+</head>
+
+<body id="top">
+
+    <!-- preloader -->
+    <div id="preloader">
+        <div id="loader" class="dots-fade">
+            <div></div><div></div><div></div>
+        </div>
+    </div>
+
+    <!-- page wrap -->
+    <div id="page" class="s-pagewrap">
+
+        <!-- header -->
+        <header class="s-header">
+            <div class="row s-header__inner width-sixteen-col">
+
+                <div class="s-header__block">
+                    <div class="s-header__logo">
+                        <a class="logo" href="{{ url_for('home') }}">
+                            <img src="{{ url_for('static', filename='images/logo.svg') }}" alt="Homepage">
+                        </a>
+                    </div>
+                    <a class="s-header__menu-toggle" href="#0"><span>Menu</span></a>
+                </div>
+
+                <nav class="s-header__nav">
+                    <ul class="s-header__menu-links">
+                        <li><a href="{{ url_for('about') }}">About</a></li>
+                        <li class="current"><a href="{{ url_for('contact') }}">Contact</a></li>
+                    </ul>
+
+                    <div class="s-header__contact">
+                        <a href="{{ url_for('contact') }}" class="btn btn--primary s-header__contact-btn">
+                            Let's Work Together
+                        </a>
+                    </div>
+                </nav>
+
+            </div>
+        </header>
+
+        <!-- main content -->
+        <section id="content" class="s-content">
+
+            <section class="s-pageheader pageheader">
+                <div class="row">
+                    <div class="column xl-12">
+                        <h1 class="page-title">
+                            <span class="page-title__small-type text-pretitle">Contact</span>
+                            Get In Touch
+                        </h1>
+                    </div>
+                </div>
+            </section>
+
+            <section class="s-pagecontent pagecontent">
+
+                <div class="row pageintro">
+                    <div class="column xl-6 lg-12">
+                        <h2 class="text-display-title">{{ data.contact_title }}</h2>
+                    </div>
+                    <div class="column xl-6 lg-12 u-flexitem-x-right">
+                        <p class="lead">
+                            {{ data.contact_subtitle }}
+                        </p>
+                    </div>
+                </div>
+
+                <div class="row pagemedia">
+                    <div class="column xl-12">
+                        <figure class="page-media">
+                            <img src="{{ url_for('static', filename='images/thumbs/contact/contact-1200.jpg') }}"
+                                 srcset="{{ url_for('static', filename='images/thumbs/contact/contact-2400.jpg') }} 2400w,
+                                         {{ url_for('static', filename='images/thumbs/contact/contact-1200.jpg') }} 1200w,
+                                         {{ url_for('static', filename='images/thumbs/contact/contact-600.jpg') }} 600w"
+                                 sizes="100vw"
+                                 alt="">
+                        </figure>
+                    </div>
+                </div>
+
+                <div class="row width-narrower pagemain">
+                    <div class="column xl-12">
+
+                        <h2>Send Me a Message</h2>
+
+                        <div class="row">
+                            <!-- LEFT -->
+                            <div class="column xl-6 md-12 contact-cta">
+                                <p>{{ data.contact_description }}</p>
+
+                                <a href="mailto:{{ data.email }}" class="btn btn--primary u-fullwidth contact-btn">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24">
+                                        <path d="M20 4H4c-1.103 0-2 .897-2 2v12c0 1.103..."></path>
+                                    </svg>
+                                    Email Me
+                                </a>
+                            </div>
+
+                            <!-- RIGHT -->
+                            <div class="column xl-5 md-12 u-flexitem-x-right">
+
+                                <div class="contact-block">
+                                    <h6>Social Links</h6>
+                                    <ul class="contact-social social-list">
+                                        <li><a href="{{ data.linkedin }}" target="_blank">LinkedIn</a></li>
+                                        <li><a href="{{ data.github }}" target="_blank">GitHub</a></li>
+                                    </ul>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </section>
+
+        </section>
+
+        <!-- footer -->
+        <footer class="s-footer">
+
+            <div class="row s-footer__content">
+
+                <div class="column xl-6 lg-6 md-12">
+                    <h3>About Me</h3>
+                    <p>{{ data.footer_about }}</p>
+                </div>
+
+                <div class="column xl-3 lg-6 md-12 s-footer__site-links">
+                    <h3>Site Links</h3>
+                    <ul class="link-list">
+                        <li><a href="{{ url_for('home') }}">Home</a></li>
+                        <li><a href="{{ url_for('about') }}">About</a></li>
+                        <li><a href="{{ url_for('contact') }}">Contact</a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="row s-footer__bottom">
+
+                <div class="column xl-6 lg-12">
+                    <ul class="s-footer__social social-list">
+                        <li><a href="{{ data.linkedin }}">LinkedIn</a></li>
+                        <li><a href="{{ data.github }}">GitHub</a></li>
+                    </ul>
+                </div>
+
+                <div class="column xl-6 lg-12">
+                    <p class="ss-copyright">
+                        <span>© {{ data.name }}</span>
+                        <span>Design by StyleShout</span>
+                    </p>
+                </div>
+
+                <div class="ss-go-top">
+                    <a class="smoothscroll" href="#top">▲</a>
+                </div>
+
+            </div>
+
+        </footer>
+
+    </div>
+
+    <!-- JS -->
+    <script src="{{ url_for('static', filename='js/plugins.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+
+</body>
+</html>

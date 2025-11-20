@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>K. Krishna Karthikeya</title>
+
+  <script>
+    document.documentElement.classList.remove('no-js');
+    document.documentElement.classList.add('js');
+  </script>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/vendor.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+
+  <!-- Favicons -->
+  <link rel="apple-touch-icon" sizes="180x180" href="{{ url_for('static', filename='apple-touch-icon.png') }}">
+  <link rel="icon" type="image/png" sizes="32x32" href="{{ url_for('static', filename='favicon-32x32.png') }}">
+  <link rel="icon" type="image/png" sizes="16x16" href="{{ url_for('static', filename='favicon-16x16.png') }}">
+  <link rel="manifest" href="{{ url_for('static', filename='site.webmanifest') }}">
+
+</head>
+<body id="top">
+
+  <div id="preloader">
+    <div id="loader" class="dots-fade">
+      <div></div><div></div><div></div>
+    </div>
+  </div>
+
+  <div id="page" class="s-pagewrap ss-home">
+
+    <!-- Header -->
+    <header class="s-header">
+      <div class="row s-header__inner width-sixteen-col">
+
+        <div class="s-header__block">
+          <div class="s-header__logo">
+            <a class="logo" href="{{ url_for('home') }}">
+              <img src="{{ url_for('static', filename='images/logo.svg') }}" alt="Homepage">
+            </a>
+          </div>
+          <a class="s-header__menu-toggle" href="#0"><span>Menu</span></a>
+        </div>
+
+        <nav class="s-header__nav">
+          <ul class="s-header__menu-links">
+            <li><a href="{{ url_for('about') }}">About</a></li>
+            <li><a href="{{ url_for('contact') }}">Contact</a></li>
+          </ul>
+
+          <div class="s-header__contact">
+            <a href="{{ url_for('contact') }}" class="btn btn--primary s-header__contact-btn">Let's Work Together</a>
+          </div>
+        </nav>
+
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <section id="content" class="s-content">
+
+      <!-- Intro -->
+      <section id="intro" class="s-intro">
+        <div class="row s-intro__content width-sixteen-col">
+          <div class="column lg-12 s-intro__content-inner grid-block">
+
+            <div class="s-intro__content-text">
+              <div class="s-intro__content-pretitle text-pretitle">
+                Hello, I'm K. Krishna Karthikeya
+              </div>
+              <h1 class="s-intro__content-title">
+                Aspiring DevOps Engineer 
+                focused on Containerization,<br>
+                CI/CD & Automation. 
+                <br>
+              </h1>
+            </div>
+
+            <div class="s-intro__content-media">
+              <div class="s-intro__content-media-inner">
+                <img src="{{ url_for('static', filename='images/myIntro.jpg') }}"
+                     srcset="{{ url_for('static', filename='images/myIntro.jpg') }} 1x,
+                             {{ url_for('static', filename='images/myIntro@2x.png') }} 2x"
+                     alt="Krishna Karthikeya">
+                <div class="lines"><span></span></div>
+              </div>
+            </div>
+
+            <div class="s-intro__scroll-down">
+              <a href="#about" class="smoothscroll">
+                <div class="scroll-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="none" stroke="#97b34a" stroke-width="1">
+                    <polyline points="7 13 12 18 17 13"></polyline>
+                    <line x1="12" y1="18" x2="12" y2="6"></line>
+                  </svg>
+                </div>
+                <span>Scroll for more</span>
+              </a>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- About Preview -->
+      <section id="about-preview" class="s-about target-section">
+        <div class="row s-about__content width-sixteen-col">
+          <div class="column grid-block grid-section-split">
+
+            <img src="{{ url_for('static', filename='images/geometric_shape.svg') }}"
+                 class="s-about__content-imgbg">
+
+            <div class="section-header grid-section-split__header">
+              <div class="text-pretitle">About</div>
+              <h2 class="text-display-title">Who I Am &amp; What I Build</h2>
+            </div>
+
+            <div class="s-about__content-main grid-section-split__primary">
+              <p class="attention-getter">
+                {{ data.about_text }}
+              </p>
+            </div>
+
+            <div class="s-about__content-btn grid-section-split__bottom">
+              <a href="{{ url_for('about') }}" class="btn btn--stroke u-fullwidth">More About Me</a>
+              <ul class="s-about__social social-list">
+                <li><a href="{{ data.linkedin }}" target="_blank">LinkedIn</a></li>
+                <li><a href="{{ data.github }}" target="_blank">GitHub</a></li>
+              </ul>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- Core Skills / Expertise -->
+      <section id="expertise" class="s-expertise">
+        <div class="row s-expertise__content width-sixteen-col">
+          <div class="column xl-12 grid-block grid-section-split">
+
+            <div class="section-header grid-section-split__header">
+              <div class="text-pretitle">Expertise</div>
+              <h2 class="text-display-title">What I Do Best</h2>
+              <p class="lead">
+                Automation, Containerization, Cloud Infrastructure, and CI/CD pipelines.
+              </p>
+            </div>
+
+            <div class="s-expertise__content-main grid-section-split__primary">
+              <div class="grid-list-items list-items show-ctr">
+
+                <div class="grid-list-items__item list-items__item">
+                  <h3 class="list-items__item-title">CI / CD</h3>
+                  <p>I build reliable pipelines to automate build, test, and deploy workflows.</p>
+                </div>
+
+                <div class="grid-list-items__item list-items__item">
+                  <h3 class="list-items__item-title">Containerization</h3>
+                  <p>Dockerizing applications to make them portable and scalable.</p>
+                </div>
+
+                <div class="grid-list-items__item list-items__item">
+                  <h3 class="list-items__item-title">Infrastructure as Code</h3>
+                  <p>Using Terraform / Docker Compose to provision consistent environments.</p>
+                </div>
+
+                <div class="grid-list-items__item list-items__item">
+                  <h3 class="list-items__item-title">Monitoring & Logging</h3>
+                  <p>Implementing observability using Prometheus, Grafana, and ELK stack.</p>
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+    </section>
+
+    <!-- Footer -->
+    <footer class="s-footer">
+      <div class="row s-footer__content">
+        <div class="column xl-6 lg-6 md-12 s-footer__block s-footer__about">
+          <h3>About Me</h3>
+          <p>{{ data.about_text }}</p>
+        </div>
+
+        <div class="column xl-3 lg-6 md-12 s-footer__block s-footer__site-links">
+          <h3>Site Links</h3>
+          <ul class="link-list">
+            <li><a href="{{ url_for('home') }}">Home</a></li>
+            <li><a href="{{ url_for('about') }}">About</a></li>
+            <li><a href="{{ url_for('contact') }}">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="column xl-3 lg-6 md-12 s-footer__block s-footer__newsletter">
+          <h3>Connect</h3>
+          <ul class="link-list">
+            <li><a href="{{ data.linkedin }}" target="_blank">LinkedIn</a></li>
+            <li><a href="{{ data.github }}" target="_blank">GitHub</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="row s-footer__bottom">
+        <div class="column xl-6 lg-12">
+          <p class="ss-copyright">
+            © K. Krishna Karthikeya
+          </p>
+        </div>
+
+        <div class="ss-go-top">
+          <a class="smoothscroll" href="#top">
+            <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36">
+              <polyline points="17 11 12 6 7 11"></polyline>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+
+  <!-- JS -->
+  <script src="{{ url_for('static', filename='js/plugins.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+
+</body>
+</html>
