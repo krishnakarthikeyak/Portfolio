@@ -5,7 +5,7 @@ pipeline {
 
         stage('Pull Latest Code') {
             steps {
-                git branch: 'main',
+                git branch: 'master',
                     url: 'https://github.com/krishnakarthikeyak/Portfolio.git'
             }
         }
