@@ -1,38 +1,23 @@
-pipeline {
+pipeline{
     agent any
-
-    stages {
-
-        stage('Pull Latest Code') {
-            steps {
-                git branch: 'master',
-                    url: 'https://github.com/krishnakarthikeyak/Portfolio.git'
+    stages{
+        stage('Clone repo'){
+            steps{
+                git branch: 'main', url: 'https://github.com/krishnakarthikeyak/Portfolio.git'
             }
         }
-
-        stage('Stop Old Containers') {
-            steps {
-                sh 'docker-compose down || true'
+        stage('Build image'){
+            steps{
+                sh 'docker build -t flask-app .'
             }
         }
-
-        stage('Build New Images') {
-            steps {
-                sh 'docker-compose build'
+        stage('Deploy with docker compose'){
+            steps{
+                // existing container if they are running
+                sh 'docker compose down || true'
+                // start app, rebuilding flask image
+                sh 'docker compose up -d --build'
             }
         }
-
-        stage('Start Updated Containers') {
-            steps {
-                sh 'docker-compose up -d'
-            }
-        }
-
-        stage('Cleanup Docker Garbage') {
-            steps {
-                sh 'docker system prune -af || true'
-            }
-        }
-
     }
 }
