@@ -8,7 +8,7 @@ pipeline{
         }
         stage('Build image'){
             steps{
-                sh 'docker build -t flask-app .'
+                sh 'docker compose build '
             }
         }
         stage('Deploy with docker compose'){
@@ -19,5 +19,14 @@ pipeline{
                 sh 'docker compose up -d --build'
             }
         }
+        stage('Cleanup Docker Garbage') {
+            steps {
+                sh 'docker system prune -af || true'
+            }
+        }
     }
 }
+
+
+
+
